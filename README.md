@@ -18,9 +18,11 @@
 
 ## Contribution
 
-📊 Check out my contribution chart to see my recent activity:
+📊 Check out my total contributions:
 
-![GitHub Contributions](https://github-readme-stats.vercel.app/api?username=Himasnhu-AT&show_icons=true&count_private=true)
+[![Himanshu's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Himasnhu-AT&show_icons=true&count_private=true&hide_border=true&hide_title=true)](https://github.com/Himasnhu-AT)
+
+
 
 ## Get in Touch
 
