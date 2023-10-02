@@ -1,13 +1,18 @@
 <h1 align="center">Hi 👋, I'm Himanshu</h1>
-<h3 align="center">Aspiring AI Developer</h3>
+<h3 align="center">Aspiring Researcher</h3>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=himasnhu-at" alt="himasnhu-at" /></a> </p>
 
-- 🔭 I’m currently working on **custom made llm model**
 
-- 🌱 I’m currently learning **Flutter, Neural Net**
 
-- 👯 I’m looking to collaborate on **AI/ML Projects, software Engineering Projects in flutter/JS**
+[![An image of @himasnhuat's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/himasnhuat)](https://holopin.io/@himasnhuat)
+
+
+- 🔭 I’m currently working on **my open-source organizations**
+
+- 🌱 I’m currently learning **Quantum Computing, AI**
+
+- 👯 I’m looking to collaborate on **any type of project**
 
 - 👨‍💻 All of my projects are available at [github.com/Himasnhu-AT](github.com/Himasnhu-AT)
 
