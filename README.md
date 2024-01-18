@@ -1,6 +1,12 @@
 
 # 💫 About Me:
-🔭 I'm building ai-res<br>🤝 If you have any project, count me in<br>☘️ Currently learning rust, exploring AI in depth<br>
+🔭 I'm building OpenEdu.
+
+🎋 working on Rest (rust based npm testing library), ShinchanJS (toy programming language), RusChain (Rust based 2-layer blockchain implementation)
+
+🤝 If you have any project, count me in
+
+☘️ Currently learning rust, exploring AI in depth
 
 
 ## 🌐 Socials:
