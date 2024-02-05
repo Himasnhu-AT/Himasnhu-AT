@@ -1,6 +1,14 @@
 
 # 💫 About Me:
-🔭 I'm building OpenEdu.
+🔭 I'm building OpenEdu, floe.dev
+
+Some of my notable projects include:
+
+- Ruschain:
+Rust-based experimental 2-layered blockchain.
+
+- ShinchanJS:
+Toy language written in TypeScript for code interpretation and conversion into TypeScript for execution. Future plans include converting it to Assembly.
 
 🎋 working on Rest (rust based npm testing library), ShinchanJS (toy programming language), RusChain (Rust based 2-layer blockchain implementation)
 
