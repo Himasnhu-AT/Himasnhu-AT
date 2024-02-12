@@ -2,15 +2,22 @@
 # 💫 About Me:
 🔭 I'm building OpenEdu, floe.dev
 
-Some of my notable projects include:
+🎋 Some of my notable projects include:
 
-- Ruschain:
-Rust-based experimental 2-layered blockchain.
+- `Rest`:
+  Jest like testing library superpowered with rust
 
-- ShinchanJS:
-Toy language written in TypeScript for code interpretation and conversion into TypeScript for execution. Future plans include converting it to Assembly.
+- `Ruschain`:
+  Rust-based experimental 2-layered blockchain.
 
-🎋 working on Rest (rust based npm testing library), ShinchanJS (toy programming language), RusChain (Rust based 2-layer blockchain implementation)
+- `ShinchanJS`:
+  Toy language written in TypeScript for code interpretation and conversion into TypeScript for execution. Future plans include converting it to Assembly.
+
+- `gitclient`:
+  Git UI built with using `TAURI` using Rust and NextJS. Alternative to Github Desktop
+
+- `ruscode`:
+  VS Code alternative written in RUST
 
 🤝 If you have any project, count me in
 
