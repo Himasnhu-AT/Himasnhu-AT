@@ -1,6 +1,6 @@
 
 # 💫 About Me:
-🔭 I'm building OpenEdu, floe.dev
+🔭 I'm building OpenEdu
 
 🎋 Some of my notable projects include:
 
