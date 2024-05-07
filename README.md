@@ -38,6 +38,8 @@
 
 ![Himasnhu's GitHub stats](https://streak-stats.demolab.com/?user=himasnhu-at&theme=dark)
 
+[![Himasnhu-AT's GitHub | Languages](https://stats.quine.sh/Himasnhu-AT/languages-over-time?theme=dark)](https://quine.sh?utm_source=widgets&utm_campaign=Himasnhu-AT)
+
 ### ✍️ Random Dev Quote
 
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko)
