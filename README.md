@@ -1,5 +1,7 @@
 # 💫 About Me:
 
+Programming enthusiast who's seen it all. Start countless projects, but complete few—seeking the thrill of complex problems. Proficient in any language, usually learned in a week. Bored with the routine, always searching for the next big challenge.
+
 🔭 I'm building OpenEdu and SynthAI-Labs
 
 🎋 Some of my notable projects include:
