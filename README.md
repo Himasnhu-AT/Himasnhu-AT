@@ -9,22 +9,10 @@
 ![Lines of Code](https://img.shields.io/badge/LOC%20Bot-20%20Million-blue)
 
 
----
-** My Github Stats **
-
-> 1000 contribution in 2024
-  >
-> x lifetime contribution
   >
 > x private repository
   >   
 > x public repository
----
-
-Programming enthusiast who's seen it all. Start countless projects, but complete few—seeking the thrill of complex problems. Proficient in any language, usually learned in a week. Bored with the routine, always searching for the next big challenge.
-
-🔭 I'm building OpenEdu and SynthAI-Labs
-
 🎋 Some of my notable projects include:
 
 - [FastSearch](https://github.com/himasnhu-at/fastsearch): FastSearch is a blazing fast search engine, an alternative to Google Search engine, implemented in Rust using the research paper on topic tf-idf.
@@ -71,3 +59,11 @@ Programming enthusiast who's seen it all. Start countless projects, but complete
 ![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)
 
+---
+** My Github Stats **
+
+> >
+> Private Repositories: 3
+  >
+> Public Repositories: 105
+---
