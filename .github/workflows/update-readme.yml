@@ -15,11 +15,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-
-    - name: Install Dependencies
+ 
+    - name: Install Git
       run: |
-        sudo apt-get update
-        sudo apt-get install -y git jq curl
+        apt-get update
+        apt-get install -y git
+        apt-get install -y jq
+        apt-get install -y curl
 
     - name: Calculate Lines of Code
       id: loc
@@ -65,10 +67,12 @@ jobs:
             cd .. && rm -rf temp_repo
             echo "Cleanup complete, $total_loc LOC so far"
         done
-        echo "LOC=$total_loc" >> $GITHUB_ENV
+        echo "Total LOC: $total_loc" 
 
     - name: Fetch GitHub Stats
       id: github_stats
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
       run: |
         # Fetch public repositories and handle response
         public_repos_response=$(curl -s https://api.github.com/users/himasnhu-at)
@@ -77,37 +81,34 @@ jobs:
           echo "Error fetching public repositories"
           exit 1
         fi
+        echo $public_repos
         
         # Fetch private repositories
-        private_repos_response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos?per_page=100)
+        private_repos_response=$(curl -L \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        https://api.github.com/user/repos)
         private_repos=$(echo $private_repos_response | jq '. | length')
         if [ $? -ne 0 ]; then
           echo "Error fetching private repositories"
           exit 1
         fi
-
-        # Fetch lifetime contributions
-        lifetime_contributions=$(curl -s https://github-contributions-api.now.sh/v1/himasnhu-at | jq '.years[0].total')
-        if [ $? -ne 0 ]; then
-          echo "Error fetching lifetime contributions"
-          exit 1
-        fi
+        echo $private_repos
 
         echo "PUBLIC_REPOS=$public_repos" >> $GITHUB_ENV
         echo "PRIVATE_REPOS=$private_repos" >> $GITHUB_ENV
-        echo "LIFETIME_CONTRIBUTIONS=$lifetime_contributions" >> $GITHUB_ENV
 
     - name: Update README.md
       run: |
         LOC=$(echo ${{ env.LOC }})
         PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
         PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
-        LIFETIME_CONTRIBUTIONS=$(echo ${{ env.LIFETIME_CONTRIBUTIONS }})
 
         # Replace the lines in README.md
         sed -i "s|![Lines of Code](.*)|![Lines of Code](https://img.shields.io/badge/LOC-${LOC}%20Lines-blue)|" README.md
         sed -i "/---/,+5d" README.md
-        echo -e "---\n** My Github Stats **\n\n> Contributions in 2024: $TOTAL_CONTRIBUTIONS\n  >\n> Lifetime Contributions: $LIFETIME_CONTRIBUTIONS\n  >\n> Private Repositories: $PRIVATE_REPOS\n  >\n> Public Repositories: $PUBLIC_REPOS\n---" >> README.md
+        echo -e "---\n** My Github Stats **\n\n> >\n> Private Repositories: $PRIVATE_REPOS\n  >\n> Public Repositories: $PUBLIC_REPOS\n---" >> README.md
 
     - name: Commit and Push Changes
       run: |
