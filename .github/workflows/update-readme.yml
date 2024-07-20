@@ -16,24 +16,71 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git jq curl
+
     - name: Calculate Lines of Code
       id: loc
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
       run: |
-        loc=$(git ls-files | xargs wc -l | grep total | awk '{print $1}')
-        echo "LOC=$loc" >> $GITHUB_ENV
+        # Fetch list of repositories (assuming public; modify for pagination and private repos as needed)
+        repos=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -s "https://api.github.com/users/himasnhu-at/repos?per_page=300" | jq -r '.[].clone_url')
+        echo $repos
+        total_loc=0
+
+        # Loop through each repository clone URL
+        for repo in $repos; do
+            echo "Processing $repo"
+            # Clone repository to a temporary directory and cd into it
+            git clone $repo temp_repo --depth 1 && cd temp_repo
+            # Calculate LOC for the repository, handling filenames with spaces or special characters
+            repo_loc=$(find . -type f \( \
+              -name "*.json" -o \
+              -name "*.yaml" -o \
+              -name "*.yml" -o \
+              -name "*.js" -o \
+              -name "*.py" -o \
+              -name "*.ts" -o \
+              -name "*.rs" -o \
+              -name "*.swift" -o \
+              -name "*.md" -o \
+              -name "*.mdx" -o \
+              -name "*.jsx" -o \
+              -name "*.tsx" -o \
+              -name "*.go" -o \
+              -name "*.cs" -o \
+              -name "*.c" -o \
+              -name "*.cpp" -o \
+              -name "*.c++" -o \
+              -name "*.asm" -o \
+              -name "*.ipynb" \
+              \) -exec wc -l {} + | awk '{total += $1} END {print total}')
+            echo "LOC for $(basename $repo): $repo_loc"
+            # Add to total LOC
+            total_loc=$((total_loc + repo_loc))
+            # Cleanup: cd out and remove the temporary directory
+            cd .. && rm -rf temp_repo
+            echo "Cleanup complete, $total_loc LOC so far"
+        done
+        echo "LOC=$total_loc" >> $GITHUB_ENV
 
     - name: Fetch GitHub Stats
       id: github_stats
       run: |
         # Fetch public repositories and handle response
-        public_repos=$(curl -s https://api.github.com/users/himasnhu-at | jq '.public_repos')
+        public_repos_response=$(curl -s https://api.github.com/users/himasnhu-at)
+        public_repos=$(echo $public_repos_response | jq '.public_repos')
         if [ $? -ne 0 ]; then
           echo "Error fetching public repositories"
           exit 1
         fi
         
         # Fetch private repositories
-        private_repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos?per_page=1 | jq '. | length')
+        private_repos_response=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos?per_page=100)
+        private_repos=$(echo $private_repos_response | jq '. | length')
         if [ $? -ne 0 ]; then
           echo "Error fetching private repositories"
           exit 1
