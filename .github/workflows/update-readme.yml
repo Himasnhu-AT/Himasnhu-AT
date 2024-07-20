@@ -16,12 +16,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
  
-    - name: Install Git
-      run: |
-        apt-get update
-        apt-get install -y git
-        apt-get install -y jq
-        apt-get install -y curl
 
     - name: Calculate Lines of Code
       id: loc
