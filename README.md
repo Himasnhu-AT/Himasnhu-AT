@@ -65,3 +65,9 @@ Programming enthusiast who's seen it all. Start countless projects, but complete
 
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+# 📊 GitHub Stats:
+
+![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)
+
