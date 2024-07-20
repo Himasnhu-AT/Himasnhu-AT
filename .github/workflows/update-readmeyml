@@ -1,0 +1,37 @@
+name: Update README
+
+on:
+  schedule:
+    # Runs at 12 AM daily
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Calculate Lines of Code
+      id: loc
+      run: |
+        loc=$(git ls-files | xargs wc -l | grep total | awk '{print $1}')
+        echo "::set-output name=loc::$loc"
+
+    - name: Update README.md
+      id: update-readme
+      run: |
+        sed -i "s|![Lines of Code](.*)|![Lines of Code](https://img.shields.io/badge/LOC-$GITHUB_WORKSPACE--$GITHUB_REPOSITORY_NAME%20Lines-blue)|" README.md
+        echo -e "\n# 📊 GitHub Stats:\n\n![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)\n![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)\n" >> README.md
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Update README with latest stats"
+        git push
