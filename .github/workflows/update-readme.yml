@@ -20,20 +20,39 @@ jobs:
       id: loc
       run: |
         loc=$(git ls-files | xargs wc -l | grep total | awk '{print $1}')
-        echo "::set-output name=loc::$loc"
+        echo "LOC=$loc" >> $GITHUB_ENV
+
+    - name: Fetch GitHub Stats
+      id: github_stats
+      run: |
+        total_contributions=$(curl -s https://api.github.com/users/himasnhu-at | jq .public_repos)
+        public_repos=$(curl -s https://api.github.com/users/himasnhu-at | jq .public_repos)
+        private_repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user/repos?per_page=1 | jq '. | length')
+        lifetime_contributions=$(curl -s https://github-contributions-api.now.sh/v1/himasnhu-at | jq '.years[0].total')
+
+        echo "TOTAL_CONTRIBUTIONS=$total_contributions" >> $GITHUB_ENV
+        echo "PUBLIC_REPOS=$public_repos" >> $GITHUB_ENV
+        echo "PRIVATE_REPOS=$private_repos" >> $GITHUB_ENV
+        echo "LIFETIME_CONTRIBUTIONS=$lifetime_contributions" >> $GITHUB_ENV
 
     - name: Update README.md
-      id: update-readme
       run: |
-        sed -i "s|![Lines of Code](.*)|![Lines of Code](https://img.shields.io/badge/LOC-$GITHUB_WORKSPACE--$GITHUB_REPOSITORY_NAME%20Lines-blue)|" README.md
-        echo -e "\n# 📊 GitHub Stats:\n\n![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)\n![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)\n" >> README.md
+        LOC=$(echo ${{ env.LOC }})
+        TOTAL_CONTRIBUTIONS=$(echo ${{ env.TOTAL_CONTRIBUTIONS }})
+        PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
+        PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
+        LIFETIME_CONTRIBUTIONS=$(echo ${{ env.LIFETIME_CONTRIBUTIONS }})
+
+        sed -i "s|![Lines of Code](.*)|![Lines of Code](https://img.shields.io/badge/LOC-${LOC}%20Lines-blue)|" README.md
+        sed -i "/---/,+5d" README.md
+        echo -e "---\n** My Github Stats **\n\n> $TOTAL_CONTRIBUTIONS contributions in 2024\n  >\n> $LIFETIME_CONTRIBUTIONS lifetime contributions\n  >\n> $PRIVATE_REPOS private repositories\n  >\n> $PUBLIC_REPOS public repositories\n---" >> README.md
 
     - name: Commit and Push Changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         git add README.md
         git commit -m "Update README with latest stats"
-        git push https://$GITHUB_ACTOR:${{ secrets.PAT }}@github.com/$GITHUB_REPOSITORY.git
+        git push origin HEAD:main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
