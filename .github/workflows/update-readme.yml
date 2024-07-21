@@ -92,24 +92,33 @@ jobs:
 
         echo "PUBLIC_REPOS=$public_repos" >> $GITHUB_ENV
         echo "PRIVATE_REPOS=$private_repos" >> $GITHUB_ENV
-
     - name: Update README.md
       run: |
         LOC=$(echo ${{ env.LOC }})
         PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
         PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
 
-        # Replace the lines in README.md
-        sed -i "s|![Lines of Code](.*)|![Lines of Code](https://img.shields.io/badge/LOC-${LOC}%20Lines-blue)|" README.md
-        sed -i "/---/,+5d" README.md
-        echo -e "---\n** My Github Stats **\n\n> >\n> Private Repositories: $PRIVATE_REPOS\n  >\n> Public Repositories: $PUBLIC_REPOS\n---" >> README.md
+        echo "LOC: $LOC"
+        echo "PUBLIC_REPOS: $PUBLIC_REPOS"
+        echo "PRIVATE_REPOS: $PRIVATE_REPOS"
 
-    - name: Commit and Push Changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-        git add README.md
-        git commit -m "Update README with latest stats"
-        git push origin HEAD:main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Update README.md
+    #   run: |
+    #     LOC=$(echo ${{ env.LOC }})
+    #     PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
+    #     PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
+
+    #     # Replace the lines in README.md
+    #     sed -i '' "s|of Code](.*)|of Code](https://img.shields.io/badge/LOC-${LOC}%20Lines-blue)|" README.md
+    #     sed -i "/---/,+5d" README.md
+    #     echo -e "---\n** My Github Stats **\n\n> >\n> Private Repositories: $PRIVATE_REPOS\n  >\n> Public Repositories: $PUBLIC_REPOS\n---" >> README.md
+
+    # - name: Commit and Push Changes
+    #   run: |
+    #     git config --global user.name 'github-actions[bot]'
+    #     git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+    #     git add README.md
+    #     git commit -m "Update README with latest stats"
+    #     git push origin HEAD:main
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -4,15 +4,10 @@
 [![Website](https://img.shields.io/badge/Website-%230077B5.svg?logo=google-chrome&logoColor=white)](https://himasnhu-at.vercel.app)
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:hyattherate2005@gmail.com)
 
-[![CodeTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
+> From May 20, 2024
+> [![Time Spent on Coding, from 16 May, 2024. Powered by: WakaTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
+> ![Lines of Code](https://img.shields.io/badge/LOC-5,375,933%20Lines%20of%20code%20written-blue)
 
-![Lines of Code](https://img.shields.io/badge/LOC%20Bot-20%20Million-blue)
-
-
-  >
-> x private repository
-  >   
-> x public repository
 🎋 Some of my notable projects include:
 
 - [FastSearch](https://github.com/himasnhu-at/fastsearch): FastSearch is a blazing fast search engine, an alternative to Google Search engine, implemented in Rust using the research paper on topic tf-idf.
@@ -31,13 +26,14 @@
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)
 
 # 💻 Tech Stack:
+
 ![Rust](https://img.shields.io/badge/Rust-black?style=for-the-badge&logo=rust&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-FA7343?style=for-the-badge&logo=swift&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
@@ -50,20 +46,10 @@
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
-
-
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
-# 📊 GitHub Stats:
-
-![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)
-
 ---
-** My Github Stats **
 
-> >
-> Private Repositories: 3
-  >
-> Public Repositories: 105
----
+### **🏆 GitHub Profile Trophy:**
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=Himasnhu-at&theme=onedark)](https://github.com/Himasnhu-at/github-profile-trophy)
