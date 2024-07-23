@@ -4,8 +4,8 @@
 [![Website](https://img.shields.io/badge/Website-%230077B5.svg?logo=google-chrome&logoColor=white)](https://himasnhu-at.vercel.app)
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:hyattherate2005@gmail.com)
 
-> From May 20, 2024
-> [![Time Spent on Coding, from 16 May, 2024. Powered by: WakaTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
+> > From May 20, 2024 [![Time Spent on Coding, from 16 May, 2024. Powered by: WakaTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
+> 
 > ![Lines of Code](https://img.shields.io/badge/LOC-5,383,429%20Lines%20of%20code%20written-blue)
 
 🎋 Some of my notable projects include:
