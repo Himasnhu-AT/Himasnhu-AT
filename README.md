@@ -6,7 +6,7 @@
 
 > From May 20, 2024
 > [![Time Spent on Coding, from 16 May, 2024. Powered by: WakaTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
-> ![Lines of Code](https://img.shields.io/badge/LOC-5,375,933%20Lines%20of%20code%20written-blue)
+> ![Lines of Code](https://img.shields.io/badge/LOC-5,383,429%20Lines%20of%20code%20written-blue)
 
 🎋 Some of my notable projects include:
 
@@ -24,6 +24,8 @@
 
 ![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himasnhu-at&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himasnhu-at&layout=compact&theme=radical)
+
+![Himasnhu's GitHub stats](https://streak-stats.demolab.com/?user=himasnhu-at&theme=dark)
 
 # 💻 Tech Stack:
 
