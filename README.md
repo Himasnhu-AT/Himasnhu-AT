@@ -10,6 +10,7 @@
 
 🎋 Some of my notable projects include:
 
+- [FallenAngel-SE/CY]: Fallen Angel, an advanced suite of AI tools designed for development and cybersecurity. Functions as my assistant developer. Will be released soon. Checkout its demos: [Frist post, showcase](https://www.linkedin.com/posts/himanshu-at_testing-out-new-product-revealed-soon-activity-7232783015360221185-t-Dr) [LLAMA3.1-70B](https://www.linkedin.com/posts/himanshu-at_llm-really-matters-a-lot-in-my-earlier-activity-7233145551096012800-d87p)  [Using it for learning](https://www.linkedin.com/posts/himanshu-at_edtech-machinelearning-pythonprogramming-activity-7233733311326474241-FbZK)
 - [FastSearch](https://github.com/himasnhu-at/fastsearch): FastSearch is a blazing fast search engine, an alternative to Google Search engine, implemented in Rust using the research paper on topic tf-idf.
 - [ScratchML-Algo](https://github.com/Himasnhu-AT/ScratchML-Algo): ScratchML-Algo is a collection of machine learning and deep learning algorithms implemented from scratch in Python.
 - [Dynamo-Prisma](https://github.com/techsavvyash/dynamo-prisma): Create Prisma Models Dynamically from JSON Schema.
