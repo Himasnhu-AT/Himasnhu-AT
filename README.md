@@ -6,20 +6,60 @@
 
 > > From May 20, 2024 [![Time Spent on Coding, from 16 May, 2024. Powered by: WakaTime](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
 > 
-> ![Lines of Code](https://img.shields.io/badge/LOC-5,383,429%20Lines%20of%20code%20written-blue)
+> ![Lines of Code](https://img.shields.io/badge/LOC-6,667,538%20Lines%20of%20code%20written-blue) # only public repos
+Here's a revised version of your GitHub README experience section with added icons and stickers to make it more visually appealing:
 
-🎋 Some of my notable projects include:
+---
 
-- [FallenAngel-SE/CY](): Fallen Angel, an advanced suite of AI tools designed for development and cybersecurity. Functions as my assistant developer. Will be released soon. Checkout its demos: [Frist post, showcase](https://www.linkedin.com/posts/himanshu-at_testing-out-new-product-revealed-soon-activity-7232783015360221185-t-Dr) [LLAMA3.1-70B](https://www.linkedin.com/posts/himanshu-at_llm-really-matters-a-lot-in-my-earlier-activity-7233145551096012800-d87p)  [Using it for learning](https://www.linkedin.com/posts/himanshu-at_edtech-machinelearning-pythonprogramming-activity-7233733311326474241-FbZK)
-- [FastSearch](https://github.com/himasnhu-at/fastsearch): FastSearch is a blazing fast search engine, an alternative to Google Search engine, implemented in Rust using the research paper on topic tf-idf.
-- [ScratchML-Algo](https://github.com/Himasnhu-AT/ScratchML-Algo): ScratchML-Algo is a collection of machine learning and deep learning algorithms implemented from scratch in Python.
-- [Dynamo-Prisma](https://github.com/techsavvyash/dynamo-prisma): Create Prisma Models Dynamically from JSON Schema.
-- [QM-RES](https://github.com/Himasnhu-AT/QM-res): Quantum Machine Learning Research and implementation of Quantum Machine Learning Algorithms in Python, OpenQASM using Qiskit.
-- [Rusty-Explorer](https://github.com/Himasnhu-AT/rusty-explorer): RustyExplorer: Lightning-fast file searching. Tauri, React, Vite, and Rust-powered file explorer for a speedy and seamless experience. Over 85% faster than Windows Explorer while benchmarking on 100,000 files. Though its major drawback was high memory consumption, it can be reduced by using the latest version of Tauri, and improving the caching mechanism.
+### Professional Experience
+
+- **OpenEdu** 🧑‍🎓: A side project focused on creating interactive AI agents for teaching. The goal is to provide as much value as possible for free. Key products include:
+  - **FallenAngel-SE/CY** 🔐: An advanced suite of AI tools for development and cybersecurity.
+  - **arXiv** 📚: A product aimed at enhancing academic research through AI.
+
+- **FiscalAI** 💼: Consultant specializing in building financial solutions and providing strategic guidance.
+
+- **OpenSS-AI** 🌐: Research on the decentralization of AI and its deployment on quantum computers, alongside several other projects.
+
+- Tublian 🛠️: Currently working on the tos project, which involves:
+
+  - AI Agents 🤖: Developing advanced AI agents for various applications.
+  - Code Obfuscation 🔒: Enhancing code security through advanced obfuscation techniques.
+  - Docker 🐳: Implementing and managing containerized applications.
+  - CI/CD 🔄: Setting up Continuous Integration and Continuous Deployment pipelines to streamline development and deployment processes.
+
+### Currently Building
+  - OpenEdu, OpenSS-AI as described above
+  - Tublian ☘️: Developing and refining advanced solutions in the tos project.
+  - Operating System in Rust 🖥️: Building an OS from scratch in Rust, alongside several ambitious projects.
+### Learning
+  - VisionOS 👁️: Exploring the latest in VisionOS development.
+### Seeking Opportunities
+  - Looking for Job 💼: Open to new opportunities and challenges in the tech industry.
+
+### Notable Projects
+
+- [**FallenAngel-SE/CY**](#) 🔥: A cutting-edge suite of AI tools designed for development and cybersecurity. Functions as my assistant developer. Upcoming release. Check out its demos:
+  - [First Post, Showcase](https://www.linkedin.com/posts/himanshu-at_testing-out-new-product-revealed-soon-activity-7232783015360221185-t-Dr) 🎥
+  - [LLAMA3.1-70B](https://www.linkedin.com/posts/himanshu-at_llm-really-matters-a-lot-in-my-earlier-activity-7233145551096012800-d87p) 🤖
+  - [Learning with FallenAngel](https://www.linkedin.com/posts/himanshu-at_edtech-machinelearning-pythonprogramming-activity-7233733311326474241-FbZK) 📘
+
+- [**FastSearch**](https://github.com/himasnhu-at/fastsearch) 🚀: A high-performance search engine implemented in Rust, based on tf-idf research. An alternative to traditional search engines.
+
+- [**ScratchML-Algo**](https://github.com/Himasnhu-AT/ScratchML-Algo) 🧠: A collection of machine learning and deep learning algorithms implemented from scratch in Python.
+
+- [**Dynamo-Prisma**](https://github.com/techsavvyash/dynamo-prisma) ⚙️: A tool for dynamically creating Prisma Models from JSON Schema.
+
+- [**QM-RES**](https://github.com/Himasnhu-AT/QM-res) 🧬: Research and implementation of Quantum Machine Learning Algorithms in Python and OpenQASM using Qiskit.
+
+- [**Rusty-Explorer**](https://github.com/Himasnhu-AT/rusty-explorer) 🔍: A lightning-fast file searching tool. Built with Tauri, React, Vite, and Rust, it offers a speedy file browsing experience—over 85% faster than Windows Explorer. Despite high memory consumption, improvements are underway with the latest Tauri version and enhanced caching mechanisms.
+
+---
 
 🤝 If you have any project, count me in
 
-☘️ Currently learning Rust, exploring AI in-depth
+---
+
 
 # 📊 GitHub Stats:
 
@@ -29,6 +69,8 @@
 ![Himasnhu's GitHub stats](https://streak-stats.demolab.com/?user=himasnhu-at&theme=dark)
 
 # 💻 Tech Stack:
+
+> Almost Everything, but majorly: 
 
 ![Rust](https://img.shields.io/badge/Rust-black?style=for-the-badge&logo=rust&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-FA7343?style=for-the-badge&logo=swift&logoColor=white)
