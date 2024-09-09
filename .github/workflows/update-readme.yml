@@ -70,7 +70,7 @@ jobs:
           }
 
           # Log the start of the script
-          echo "$(date) - Starting LOC script." > "$LOG_FILE"
+          echo "$(date) - Starting LOC script."
 
           # Fetch all repositories (user + orgs)
           repos=$(fetch_repos)
