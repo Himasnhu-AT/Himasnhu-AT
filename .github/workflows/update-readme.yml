@@ -22,20 +22,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
-          USER_REPOS_URL="https://api.github.com/users/himanshu-at/repos"
+          USER_REPOS_URL="https://api.github.com/users/himasnhu-at/repos"
           ORGS_URL="https://api.github.com/user/orgs"
           PER_PAGE=100
+          LOG_FILE="loc_script.log"
 
+          # Function to fetch repositories with pagination
           fetch_repos() {
             local repos=()
             local page=1
 
+            # Log the start of repository fetching
+            echo "$(date) - Fetching user repositories..." >> "$LOG_FILE"
+
+            # Fetch user repositories with pagination
             while true; do
               response=$(curl -H "Authorization: token $GITHUB_TOKEN" -s "${USER_REPOS_URL}?per_page=$PER_PAGE&page=$page")
               page_repos=$(echo "$response" | jq -r '.[].clone_url')
 
               if [ -z "$page_repos" ]; then
-                echo "$(date) - No more user repositories found on page $page."
+                echo "$(date) - No more user repositories found on page $page." >> "$LOG_FILE"
                 break
               fi
 
@@ -44,7 +50,7 @@ jobs:
             done
 
             # Fetch organizations to get repos from each org
-            echo "$(date) - Fetching organization repositories..."
+            echo "$(date) - Fetching organization repositories..." >> "$LOG_FILE"
             orgs=$(curl -H "Authorization: token $GITHUB_TOKEN" -s "$ORGS_URL" | jq -r '.[].login')
 
             for org in $orgs; do
@@ -56,7 +62,7 @@ jobs:
                 page_repos=$(echo "$response" | jq -r '.[].clone_url')
 
                 if [ -z "$page_repos" ]; then
-                  echo "$(date) - No more repositories found for organization $org on page $page."
+                  echo "$(date) - No more repositories found for organization $org on page $page." >> "$LOG_FILE"
                   break
                 fi
 
@@ -65,25 +71,25 @@ jobs:
               done
             done
 
-            echo "$(date) - Repository fetching completed."
+            echo "$(date) - Repository fetching completed." >> "$LOG_FILE"
             echo "${repos[@]}"
           }
 
           # Log the start of the script
-          echo "$(date) - Starting LOC script."
+          echo "$(date) - Starting LOC script." > "$LOG_FILE"
 
           # Fetch all repositories (user + orgs)
           repos=$(fetch_repos)
           repo_count=$(echo "$repos" | wc -w)
           echo "Total number of repositories: $repo_count"
-          echo "$(date) - Total number of repositories: $repo_count"
+          echo "$(date) - Total number of repositories: $repo_count" >> "$LOG_FILE"
 
           total_loc=0
 
           # Loop through each repository clone URL
           for repo in $repos; do
             echo "Processing $repo"
-            echo "$(date) - Cloning repository: $repo"
+            echo "$(date) - Cloning repository: $repo" >> "$LOG_FILE"
 
             # Clone repository to a temporary directory and cd into it
             git clone $repo temp_repo --depth 1 && cd temp_repo
@@ -112,7 +118,7 @@ jobs:
               \) -exec wc -l {} + | awk '{total += $1} END {print total}')
 
             echo "LOC for $(basename $repo): $repo_loc"
-            echo "$(date) - LOC for $(basename $repo): $repo_loc"
+            echo "$(date) - LOC for $(basename $repo): $repo_loc" >> "$LOG_FILE"
 
             # Add to total LOC
             total_loc=$((total_loc + repo_loc))
@@ -120,11 +126,14 @@ jobs:
             # Cleanup: cd out and remove the temporary directory
             cd .. && rm -rf temp_repo
             echo "Cleanup complete, $total_loc LOC so far"
-            echo "$(date) - Cleanup complete, $total_loc LOC so far"
+            echo "$(date) - Cleanup complete, $total_loc LOC so far" >> "$LOG_FILE"
           done
 
           echo "Total LOC: $total_loc"
-          echo "$(date) - Total LOC: $total_loc"
+          echo "$(date) - Total LOC: $total_loc" >> "$LOG_FILE"
+
+          # Log the end of the script
+          echo "$(date) - LOC script completed." >> "$LOG_FILE"
 
       - name: Fetch GitHub Stats
         id: github_stats
