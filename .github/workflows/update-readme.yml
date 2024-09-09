@@ -3,7 +3,7 @@ name: Update README
 on:
   schedule:
     # Runs at 12 AM daily
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -13,25 +13,81 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
- 
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Calculate Lines of Code
-      id: loc
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-      run: |
-        # Fetch list of repositories (assuming public; modify for pagination and private repos as needed)
-        repos=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -s "https://api.github.com/users/himasnhu-at/repos?per_page=300" | jq -r '.[].clone_url')
-        echo $repos
-        total_loc=0
+      - name: Calculate Lines of Code
+        id: loc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          GITHUB_TOKEN="${{secrets.token}}"
+          USER_REPOS_URL="https://api.github.com/users/himanshu-at/repos"
+          ORGS_URL="https://api.github.com/user/orgs"
+          PER_PAGE=100
 
-        # Loop through each repository clone URL
-        for repo in $repos; do
+          fetch_repos() {
+            local repos=()
+            local page=1
+
+            while true; do
+              response=$(curl -H "Authorization: token $GITHUB_TOKEN" -s "${USER_REPOS_URL}?per_page=$PER_PAGE&page=$page")
+              page_repos=$(echo "$response" | jq -r '.[].clone_url')
+
+              if [ -z "$page_repos" ]; then
+                echo "$(date) - No more user repositories found on page $page."
+                break
+              fi
+
+              repos+=($page_repos)
+              ((page++))
+            done
+
+            # Fetch organizations to get repos from each org
+            echo "$(date) - Fetching organization repositories..."
+            orgs=$(curl -H "Authorization: token $GITHUB_TOKEN" -s "$ORGS_URL" | jq -r '.[].login')
+
+            for org in $orgs; do
+              page=1
+              org_repos_url="https://api.github.com/orgs/$org/repos"
+
+              while true; do
+                response=$(curl -H "Authorization: token $GITHUB_TOKEN" -s "${org_repos_url}?per_page=$PER_PAGE&page=$page")
+                page_repos=$(echo "$response" | jq -r '.[].clone_url')
+
+                if [ -z "$page_repos" ]; then
+                  echo "$(date) - No more repositories found for organization $org on page $page."
+                  break
+                fi
+
+                repos+=($page_repos)
+                ((page++))
+              done
+            done
+
+            echo "$(date) - Repository fetching completed."
+            echo "${repos[@]}"
+          }
+
+          # Log the start of the script
+          echo "$(date) - Starting LOC script." > "$LOG_FILE"
+
+          # Fetch all repositories (user + orgs)
+          repos=$(fetch_repos)
+          repo_count=$(echo "$repos" | wc -w)
+          echo "Total number of repositories: $repo_count"
+          echo "$(date) - Total number of repositories: $repo_count"
+
+          total_loc=0
+
+          # Loop through each repository clone URL
+          for repo in $repos; do
             echo "Processing $repo"
+            echo "$(date) - Cloning repository: $repo"
+
             # Clone repository to a temporary directory and cd into it
             git clone $repo temp_repo --depth 1 && cd temp_repo
+
             # Calculate LOC for the repository, handling filenames with spaces or special characters
             repo_loc=$(find . -type f \( \
               -name "*.json" -o \
@@ -54,53 +110,60 @@ jobs:
               -name "*.asm" -o \
               -name "*.ipynb" \
               \) -exec wc -l {} + | awk '{total += $1} END {print total}')
+
             echo "LOC for $(basename $repo): $repo_loc"
+            echo "$(date) - LOC for $(basename $repo): $repo_loc"
+
             # Add to total LOC
             total_loc=$((total_loc + repo_loc))
+
             # Cleanup: cd out and remove the temporary directory
             cd .. && rm -rf temp_repo
             echo "Cleanup complete, $total_loc LOC so far"
-        done
-        echo "Total LOC: $total_loc" 
+            echo "$(date) - Cleanup complete, $total_loc LOC so far"
+          done
 
-    - name: Fetch GitHub Stats
-      id: github_stats
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
-      run: |
-        # Fetch public repositories and handle response
-        public_repos_response=$(curl -s https://api.github.com/users/himasnhu-at)
-        public_repos=$(echo $public_repos_response | jq '.public_repos')
-        if [ $? -ne 0 ]; then
-          echo "Error fetching public repositories"
-          exit 1
-        fi
-        echo $public_repos
-        
-        # Fetch private repositories
-        private_repos_response=$(curl -L \
-        -H "Accept: application/vnd.github+json" \
-        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-        -H "X-GitHub-Api-Version: 2022-11-28" \
-        https://api.github.com/user/repos)
-        private_repos=$(echo $private_repos_response | jq '. | length')
-        if [ $? -ne 0 ]; then
-          echo "Error fetching private repositories"
-          exit 1
-        fi
-        echo $private_repos
+          echo "Total LOC: $total_loc"
+          echo "$(date) - Total LOC: $total_loc"
 
-        echo "PUBLIC_REPOS=$public_repos" >> $GITHUB_ENV
-        echo "PRIVATE_REPOS=$private_repos" >> $GITHUB_ENV
-    - name: Update README.md
-      run: |
-        LOC=$(echo ${{ env.LOC }})
-        PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
-        PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
+      - name: Fetch GitHub Stats
+        id: github_stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch public repositories and handle response
+          public_repos_response=$(curl -s https://api.github.com/users/himasnhu-at)
+          public_repos=$(echo $public_repos_response | jq '.public_repos')
+          if [ $? -ne 0 ]; then
+            echo "Error fetching public repositories"
+            exit 1
+          fi
+          echo $public_repos
 
-        echo "LOC: $LOC"
-        echo "PUBLIC_REPOS: $PUBLIC_REPOS"
-        echo "PRIVATE_REPOS: $PRIVATE_REPOS"
+          # Fetch private repositories
+          private_repos_response=$(curl -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/user/repos)
+          private_repos=$(echo $private_repos_response | jq '. | length')
+          if [ $? -ne 0 ]; then
+            echo "Error fetching private repositories"
+            exit 1
+          fi
+          echo $private_repos
+
+          echo "PUBLIC_REPOS=$public_repos" >> $GITHUB_ENV
+          echo "PRIVATE_REPOS=$private_repos" >> $GITHUB_ENV
+      - name: Update README.md
+        run: |
+          LOC=$(echo ${{ env.LOC }})
+          PUBLIC_REPOS=$(echo ${{ env.PUBLIC_REPOS }})
+          PRIVATE_REPOS=$(echo ${{ env.PRIVATE_REPOS }})
+
+          echo "LOC: $LOC"
+          echo "PUBLIC_REPOS: $PUBLIC_REPOS"
+          echo "PRIVATE_REPOS: $PRIVATE_REPOS"
 
     # - name: Update README.md
     #   run: |
