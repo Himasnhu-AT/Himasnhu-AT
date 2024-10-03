@@ -29,9 +29,12 @@
   - CI/CD 🔄: Setting up Continuous Integration and Continuous Deployment pipelines to streamline development and deployment processes.
 
 ### Currently Building
-  - OpenEdu, OpenSS-AI as described above
+  - Side Projects. mainly chatgpt's newest model o1 using Gemini
+<!--
+- OpenEdu, OpenSS-AI as described above
   - Tublian ☘️: Developing and refining advanced solutions in the tos project.
   - Operating System in Rust 🖥️: Building an OS from scratch in Rust, alongside several ambitious projects.
+  -->
 ### Learning
   - VisionOS 👁️: Exploring the latest in VisionOS development.
 ### Seeking Opportunities
