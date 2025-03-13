@@ -13,7 +13,7 @@
 
 ### Professional Experience
 
-- **OpenEdu** 🧑‍🎓: A side project focused on creating interactive AI agents for teaching. The goal is to provide as much value as possible for free. Key products include:
+- **SynthAILabs (formerly OpenEdu)** 🧑‍🎓: A side project focused on creating interactive AI agents for teaching. The goal is to provide as much value as possible for free. Key products include:
   - **FallenAngel-SE/CY** 🔐: An advanced suite of AI tools for development and cybersecurity.
   - **arXiv** 📚: A product aimed at enhancing academic research through AI.
 
@@ -37,8 +37,6 @@
   -->
 ### Learning
   - VisionOS 👁️: Exploring the latest in VisionOS development.
-### Seeking Opportunities
-  - Looking for Job 💼: Open to new opportunities and challenges in the tech industry.
 
 ### Notable Projects
 
