@@ -25,7 +25,7 @@ Quantum Computing (Algorithms, Cryptography), Generative AI (Diffusion Models, L
 - Building robust backend, deployment strategies, reducing latency, improving performance, and ensuring scalability.
 - Using AWS, ShaktiCloud, and other cloud services for deployment and scaling.
 
-### **Founding Software Engineer - CTO** @ SynthAiLabs (formerly OpenEdu)
+### **Founding Software Engineer** @ [SynthAiLabs](https://synthailabs.com) (formerly OpenEdu)
 *Dec 2023 -- Feb 2025*
 <!--- Engineered a robust REST API server in microservice architecture (MongoDB, PostgreSQL, Redis), resulting in a 40% improvement in data retrieval efficiency.
 - Successfully optimized the performance of the Web App by reducing loading time by over 80% (200ms).
@@ -35,7 +35,7 @@ Quantum Computing (Algorithms, Cryptography), Generative AI (Diffusion Models, L
 - Designed and built scalable backends and custom CLI tools to streamline workflows.
 - Building agents utilizing RAG, web capabilities, and sandboxed code execution for creating adaptive learning modules.
 
-### **AI Researcher** @ Tublian
+### **AI Researcher** @ [Tublian](https://www.tublian.com)
 *July 2024 -- Dec 2024*
 - Utilized DevOps practices with Docker to streamline development and deployment processes.
 - Implemented code obfuscation techniques to secure code for public deployment.
@@ -56,7 +56,7 @@ Quantum Computing (Algorithms, Cryptography), Generative AI (Diffusion Models, L
 
 ---
 
-## 🚀 Featured Projects
+<!---  ## 🚀 Featured Projects
 
 | Project | Description | Tech Stack |
 |:--- |:--- |:--- |
@@ -70,7 +70,7 @@ Quantum Computing (Algorithms, Cryptography), Generative AI (Diffusion Models, L
 
 *(See more projects at [himanshuat.com/projects](https://himanshuat.com/projects))*
 
----
+--- -->
 
 ## 🛠 Technical Skills
 
@@ -87,4 +87,3 @@ Quantum Computing (Algorithms, Cryptography), Generative AI (Diffusion Models, L
 ![Himanshu's GitHub stats](https://github-readme-stats.vercel.app/api?username=himanshu-at&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himanshu-at&layout=compact&theme=radical)
 
-[![Time Spent on Coding](https://wakatime.com/badge/user/018dbce3-dc14-44aa-9a25-88c7afc47d1b.svg)](https://wakatime.com/@018dbce3-dc14-44aa-9a25-88c7afc47d1b)
