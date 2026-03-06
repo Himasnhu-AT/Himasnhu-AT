@@ -17,6 +17,7 @@ Now I build products that scale.
 
 | Project | Description | Stack | Link |
 |:---|:---|:---|:---|
+| **CCProxy** | A universal proxy to supercharge Claude Code with any AI provider—OpenAI, Gemini, or local Ollama models. | TypeScript, AI Proxy | [Website](https://ccproxy.himanshuat.com/) · [GitHub](https://github.com/Himasnhu-AT/ccproxy) |
 | **OpenCrow** | Open-source AI agent platform — embeddable chat widget with dual-layer tooling (server + client) and dynamic tool merging for LLMs | React, TypeScript, Node.js, OpenAPI | [Website](https://opencrow.himanshuat.com) · [GitHub](https://github.com/Himasnhu-AT/opencrow) |
 | **AI Inference Platform** | Smart-routing inference with query classification, multi-level caching (L1 Moka + L2 Redis), semantic matching, and full Prometheus/Grafana observability | Rust, Axum, Tokio, Redis, Docker | [Website](https://infer.himanshuat.com) |
 | **TuneSLM** | Drop a dataset, answer a few questions → get a Colab notebook to fine-tune your SLM via Unsloth | Python, Unsloth, Google Colab | [Website](https://tuneslm.himanshuat.com) |
