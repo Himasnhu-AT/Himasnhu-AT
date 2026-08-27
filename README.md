@@ -1,51 +1,79 @@
-# 💫 About Me
+# 💫 Himanshu
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/himanshu-at/)
+[![Twitter / X](https://img.shields.io/badge/X-%23000000.svg?logo=x&logoColor=white)](https://twitter.com/himanshu806)
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?logo=github&logoColor=white)](https://github.com/Himasnhu-AT)
 [![Website](https://img.shields.io/badge/Website-%230077B5.svg?logo=google-chrome&logoColor=white)](https://himanshuat.com)
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:hyattherate2005@gmail.com)
 
 > **20 · Dropout · Builder** — bridging AI research and production engineering.
 
-Right now I'm an SDE at **Tejas AI (YC W25)**, building **Elip** — an AI career coach on WhatsApp (with web, a Chrome extension, and a mobile app) that helps job seekers fix their resume, build a search profile, and get matched to jobs. I work across the stack: a FastAPI WhatsApp agent (a router model with specialist sub-agents), a search layer over OpenSearch (hybrid keyword + vector search with Bedrock embeddings), a fleet of Go services that index jobs from ~60 ATS and job boards, and a Go backend behind the web and mobile apps.
-
-Before Tejas, I dropped out of NIT Kurukshetra (3rd year) to co-found **AuraX**, a fashion-tech startup funded by IIIT-Hyderabad's CIE. We researched diffusion models for virtual try-on and built a pipeline that, in our benchmarks, outperformed Google's and Stable Diffusion's results, signed deals with **Aditya Birla Fashion Group** and brands under **Mensa Brands**, and closed when bigger players flooded the space and our runway ran short. Earlier I built **SynthAiLabs (OpenEdu)**, a learning community that juniors restarted on their own after I moved on.
+Left **Tejas AI (YC W25)** in August 2026. **Open to full-time roles, contract work, and research collaborations.**
 
 ---
 
-## 🚀 What I've built (open source)
+## ⚡ Background
+
+- **Tejas AI (YC W25)** — Built **Elip**, an AI career coach on WhatsApp (with web, Chrome extension, and mobile app). Architected a FastAPI WhatsApp agent (router model + specialist sub-agents), an OpenSearch hybrid search layer (keyword BM25 + Bedrock vector embeddings), Go indexing workers syncing ~60 job boards/ATS, and a Go backend.
+- **AuraX (IIIT-Hyderabad CIE)** — Dropped out of NIT Kurukshetra (3rd year) to co-found AuraX, an AI fashion-tech startup. Researched diffusion models for virtual try-on, built an inpainting + multi-LoRA pipeline that outperformed SD and Google in benchmarks, and signed deals with **Aditya Birla Fashion Group** and **Mensa Brands**.
+- **SynthAiLabs (OpenEdu)** — Founded an open AI education and research collective for machine learning from scratch.
+
+---
+
+## 🚀 Open Source Highlights
 
 | Project | What it is | Stack | Links |
 |:---|:---|:---|:---|
-| **CCProxy** | A universal proxy that lets Claude Code talk to any AI provider: OpenAI, Gemini, or local Ollama models. | TypeScript | [Website](https://ccproxy.himanshuat.com/) · [GitHub](https://github.com/Himasnhu-AT/ccproxy) |
-| **OpenCrow** | Open-source AI-agent platform: an embeddable React chat widget with server- and client-side tooling and dynamic tool merging. | React, TypeScript, Node.js, OpenAPI | [Website](https://opencrow.himanshuat.com) · [GitHub](https://github.com/Himasnhu-AT/opencrow) |
-| **AI Inference Platform** | Inference with query-complexity routing, multi-level caching (Moka + Redis) with semantic matching, and Prometheus/Grafana observability. | Rust, Axum, Tokio, Redis, Docker | [Website](https://infer.himanshuat.com) |
-| **TuneSLM** | Drop a dataset, answer a few questions, and get a Colab notebook to fine-tune your SLM with Unsloth. | Python, Unsloth, Colab | [Website](https://tuneslm.himanshuat.com) |
-| **MockServer** | A CLI that spins up a mock backend so you can build the frontend first, with a GUI to configure it and inject latency and errors. | TypeScript, Next.js, Express | [Website](https://mockserver.himanshuat.com) · [GitHub](https://github.com/Himasnhu-AT/mockserver) |
+| **[CCProxy](https://github.com/Himasnhu-AT/ccproxy)** | Universal proxy allowing Claude Code to interface with OpenAI, Gemini, or local Ollama models. | TypeScript | [Live](https://ccproxy.himanshuat.com/) · [GitHub](https://github.com/Himasnhu-AT/ccproxy) |
+| **[OpenCrow](https://github.com/Himasnhu-AT/opencrow)** | Open-source AI agent platform with embeddable React chat widget and dynamic client/server tool orchestration. | React, TypeScript, Node.js, OpenAPI | [Live](https://opencrow.himanshuat.com) · [GitHub](https://github.com/Himasnhu-AT/opencrow) |
+| **[AI Inference Platform](https://infer.himanshuat.com)** | High-throughput AI inference with query complexity routing, semantic Moka/Redis caching, and Prometheus observability. | Rust, Axum, Tokio, Redis, Docker | [Live](https://infer.himanshuat.com) |
+| **[TuneSLM](https://tuneslm.himanshuat.com)** | Interactive pipeline generating custom Colab notebooks for fine-tuning Small Language Models via Unsloth. | Python, Unsloth, Colab | [Live](https://tuneslm.himanshuat.com) |
+| **[MockServer](https://github.com/Himasnhu-AT/mockserver)** | CLI and GUI for instantaneous mock backends with configurable latency and error injection. | TypeScript, Next.js, Express | [Live](https://mockserver.himanshuat.com) · [GitHub](https://github.com/Himasnhu-AT/mockserver) |
+| **[frm](https://github.com/Himasnhu-AT/frm)** | High-performance, memory-safe replacement for `rm` written in Rust for lightning-fast file deletion. | Rust | [GitHub](https://github.com/Himasnhu-AT/frm) |
+| **[PoW-Shield](https://github.com/Himasnhu-AT/PoW-Shield)** | Anti-DDoS validation proxy leveraging cryptographic Proof of Work challenges before origin forwarding. | Rust, C++, TypeScript | [GitHub](https://github.com/Himasnhu-AT/PoW-Shield) |
+| **[RustyExplorer](https://github.com/Himasnhu-AT/rusty-explorer)** | Lightweight cross-platform desktop file explorer with instant indexing. | Rust, Tauri, React | [GitHub](https://github.com/Himasnhu-AT/rusty-explorer) |
 
-More on my [projects page](https://himanshuat.com/projects).
-
----
-
-## 🔬 Research
-
-- **Conflict-Aware Adapter Composition (C-AAC)** — merging multiple LoRAs on top of Flux for virtual try-on without catastrophic forgetting *(AuraX / IIIT-H CIE)*
-- **Flux-VTON+** — a hybrid Flux-inpainting + multi-LoRA try-on pipeline; state-of-the-art FID/SSIM on complex garments *(AuraX / IIIT-H CIE)*
-- **MoE: Brain-Inspired LLM Architecture** — a whitepaper on Mixture-of-Experts as a computational analogue to functional specialization *(SynthAiLabs)*
-- **GPT-Neo** — "Attention Is All You Need" implemented from scratch in PyTorch
-
-**Interests:** diffusion models, LLM architectures, distributed systems, quantum computing, compiler design.
+Explore all projects on [himanshuat.com/projects](https://himanshuat.com/projects).
 
 ---
 
-## 🛠 Technical Skills
+## 🔬 Research & Papers
 
-- **Languages**: Python, TypeScript, Rust, Go, C++, Swift
-- **Frameworks**: FastAPI, Next.js, React, Nest.js, Prisma, Tauri, PyTorch
-- **AI / ML**: LLM agents, Diffusers, LLaMA, Unsloth, CUDA, Qiskit
-- **Data / Search**: OpenSearch (BM25 + kNN), Bedrock embeddings, PostgreSQL, Redis, S3
-- **Infra**: Docker, AWS, GCP, Modal, GitHub Actions, Linux
+- **[Conflict-Aware Adapter Composition (C-AAC)](https://himanshuat.com/research/conflict-aware-adapter-composition)** — Merging multiple LoRAs over Flux for virtual try-on without catastrophic interference *(AuraX / IIIT-H CIE)*
+- **[Flux-VTON+](https://himanshuat.com/research/flux-vton-plus)** — Hybrid Flux inpainting + multi-LoRA try-on architecture achieving state-of-the-art FID/SSIM on complex garments *(AuraX / IIIT-H CIE)*
+- **[MoE: Brain-Inspired LLM Architecture](https://himanshuat.com/research/moe-brain-inspired)** — Mixture-of-Experts as a computational analogue to cortical functional specialization *(SynthAiLabs)*
+- **[Attention & Transformers from Scratch](https://himanshuat.com/blogs/understanding-transformers-implementation)** — Deep-dive implementation of multi-head attention and decoder layers in PyTorch
+
+*Interests:* Diffusion models, agentic orchestration, distributed systems, compiler design, quantum computing.
 
 ---
 
-*More at [himanshuat.com](https://himanshuat.com).*
+## 🛠 Tech Stack
+
+```text
+Languages:    Python · TypeScript · Rust · Go · C++ · Swift
+AI & ML:      PyTorch · Diffusers · LoRA / Unsloth · LLM Agents · CUDA · Qiskit
+Systems & DB: OpenSearch (BM25 + kNN) · Bedrock · PostgreSQL · Redis · Tokio · Axum
+Infra & Ops:  Docker · AWS · GCP · Modal · GitHub Actions · Linux
+Frontend:     Next.js · React · Tailwind CSS · Tauri
+```
+
+---
+
+## 📊 GitHub Cadence
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Himasnhu-AT&show_icons=true&theme=transparent&hide_border=true&title_color=0077b5&text_color=888888&icon_color=0077b5" alt="Himanshu's GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Himasnhu-AT&theme=transparent&hide_border=true&ring=0077b5&fire=0077b5&currStreakLabel=0077b5" alt="Himanshu's GitHub Streak" />
+</p>
+
+---
+
+## 📬 Connect
+
+- Website: [himanshuat.com](https://himanshuat.com)
+- Read my story: [himanshuat.com/about](https://himanshuat.com/about)
+- Writing & Notes: [himanshuat.com/blogs](https://himanshuat.com/blogs)
+- Email: [hyattherate2005@gmail.com](mailto:hyattherate2005@gmail.com)
+- LinkedIn: [/in/himanshu-at](https://linkedin.com/in/himanshu-at/)
+- Twitter / X: [@himanshu806](https://twitter.com/himanshu806)
