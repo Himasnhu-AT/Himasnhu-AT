@@ -8,8 +8,6 @@
 
 > **20 · Dropout · Builder** — bridging AI research and production engineering.
 
-Left **Tejas AI (YC W25)** in August 2026. **Open to full-time roles, contract work, and research collaborations.**
-
 ---
 
 ## ⚡ Background
