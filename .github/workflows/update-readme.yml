@@ -9,6 +9,11 @@ on:
     branches:
       - main
 
+# Read-only token: this job only reads the API; it must not be able to create releases
+# (bay's installer and updates are published as releases here).
+permissions:
+  contents: read
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
