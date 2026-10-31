@@ -40,6 +40,7 @@ On the side, **[Qubit Quant Global](https://qubitquantglobal.com)**: a quant res
 
 | Project | What it is | Links |
 |:---|:---|:---|
+| **[Manga Studio](https://github.com/Himasnhu-AT/manga-studio)** | Turns a story into lettered manga pages on your Mac. Qwen-Image draws the panels locally; Claude Code or Codex can drive it over MCP. | [Live](https://mangastudio.marlstudio.com) |
 | **[CCProxy](https://github.com/Himasnhu-AT/ccproxy)** | Use Claude Code with any AI provider: OpenAI, Gemini or Ollama. | [Live](https://ccproxy.himanshuat.com/) |
 | **[OpenCrow](https://github.com/Himasnhu-AT/opencrow)** | Open-source agent platform with an embeddable React chat widget. | [Live](https://opencrow.himanshuat.com) |
 | **[Inference router](https://infer.himanshuat.com)** | LLM routing layer in Rust: 908 requests per second at 200 concurrency, 38 MB peak RAM in a load test. | [Live](https://infer.himanshuat.com) |
